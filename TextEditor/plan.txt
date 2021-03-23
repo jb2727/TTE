@@ -1,0 +1,8 @@
+Text editor plan:
+
+>we can get user input using getch
+>we can draw the screen using printw 
+>we can store the the text in a 2d linked list
+>changes are written to a buffer
+>when any non character key is pressed OR the buffer is exceeded
+write the buffer to the list
