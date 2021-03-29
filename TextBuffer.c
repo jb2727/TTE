@@ -85,7 +85,7 @@ bool y_remove_node(int y){
         }
     }
     y_node_shift(node_tobe_removed,-1);
-    node_tobe_removed->index = '\0';
+    node_tobe_removed->index = ' ';
     node_tobe_removed->y_next = NULL; 
     
     
@@ -112,7 +112,7 @@ struct x_node *x_list_init(struct y_node *index){
     index->x_first = link;
     link->index = 0;
     link->x_next = NULL;
-    link->data = '\0';
+    link->data = ' ';
     return link;
  }
 
@@ -121,7 +121,7 @@ struct x_node *x_node_insert(struct x_node *node){
     struct x_node *link = (struct x_node*) malloc(sizeof (struct x_node));
     link->index = node->index+1;
     link->x_next = node->x_next;
-    link->data = '\0';
+    link->data = ' ';
     node->x_next = link;
     //as a element has been inserted into the list, the indexes of every item "infront" of it must be shifted forward by one.
     x_node_shift(node,1); 
@@ -167,7 +167,7 @@ bool x_remove_node(int y, int x){
     x_node_shift(node_tobe_removed,-1);
     //just to get potentially get rid weird of any weird bugs
     //might just be a waste of CPU time
-    node_tobe_removed->data = '\0';
+    node_tobe_removed->data = ' ';
     node_tobe_removed->index = -1;
     node_tobe_removed->x_next = NULL;
     free(node_tobe_removed); 
@@ -182,7 +182,7 @@ bool x_remove_node(int y, int x){
 char get_char(int y, int x){
     struct x_node *node = find_node(y, x);
     if (node != NULL){
-        return '\0';
+        return ' ';
     }
     else{
         return node->data;
@@ -191,9 +191,9 @@ char get_char(int y, int x){
 
 //inputs a char into the linked list struture
 //returns true if the char could be inputted, false if the node wasn't found
-bool input_char(char input, int y, int x){
+bool change_char(char input, int y, int x){
     struct x_node *node = find_node(y, x);
-    if (node != NULL){
+    if (node == NULL){
         return false;
     }
     else{
@@ -219,12 +219,37 @@ struct x_node *x_find_end(struct y_node *root){
     while (1){
         if (iterator->x_next != NULL){
             iterator = iterator->x_next;
+        }else{
+            return iterator;
         }
-        return iterator;
     }
         
 }
 
+struct x_node *find_node_before(int y, int x){
+    struct y_node *y_pointer = y_node_find(y);
+    struct x_node *node_before = y_pointer->x_first;
+    while(1){
+        if (node_before->x_next == NULL){
+            return NULL;
+        }
+        else{
+            if (node_before->index == x){
+                return node_before;
+            }
+            else{
+                node_before = node_before->x_next;
+            }
+        }  
+    }
+}
 
-
+void insert_node_before(int y, int x, char input){
+    //need to add if case incase the node is at 0;
+    struct x_node *node = find_node_before(y, x);
+    struct x_node *new_node;
+    new_node->data = input;
+    new_node->index = node->index;
+    new_node->x_next = node;
+}
 

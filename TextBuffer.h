@@ -39,6 +39,6 @@ struct x_node *x_find_end(struct y_node *root);
 
 struct x_node *find_node(int y, int x);
 char get_char(int x, int y);
-bool input_char(char input, int y, int x);
+bool change_char(char input, int y, int x);
 
 #endif /* defined(TEXTBUFFER_H_) */
