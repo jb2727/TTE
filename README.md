@@ -25,5 +25,3 @@ Write an install script
 Not imporpant:
 Do actual comprehensive benchmarks  
 Add customization features
-
-![Screenshot](https://github.com/jb2727/TTE/blob/main/TTE.png)
