@@ -5,23 +5,23 @@ A terminal text editor, designed for people who want gedit/notepad from the CLI!
 
 PRE-ALPHA
 
-Design:
-Uses a 2D linked list as a text buffer to store the data 
-Runs from the CLI
+Design: <br />
+Uses a 2D linked list as a text buffer to store the data <br /> 
+Runs from the CLI <br />
 
-TODO:
-Important:
-Implement opimization techniques (I.E holding onto addresses that'll likely be used again)
-Implement saving and create new file
-Implement copy, cut and paste 
-Handle cases when users press unimplemented keys
-Fix bug where scrolling below the top part of the screen causes unintended behaviour
+TODO: <br />
+Important: <br />
+Implement opimization techniques (I.E holding onto addresses that'll likely be used again) <br />
+Implement saving and create new file <br />
+Implement copy, cut and paste <br />
+Handle cases when users press unimplemented keys <br />
+Fix bug where scrolling below the top part of the screen causes unintended behaviour <br />
 
-Moderate:
-Implement a line numbers
-Implement some indicator of how large the file is
-Write an install script 
+Moderate: <br />
+Implement a line numbers <br />
+Implement some indicator of how large the file is <br />
+Write an install script <br />
 
-Not imporpant:
-Do actual comprehensive benchmarks  
-Add customization features
+Not important: <br />
+Do actual comprehensive benchmarks <br />
+Add customization features <br />
