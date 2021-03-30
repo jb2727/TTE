@@ -1,6 +1,8 @@
 # TTE
 A terminal text editor, designed for people who want gedit/notepad from the CLI!!
 
+![Screenshot](https://github.com/jb2727/TTE/blob/main/TTE.png)
+
 PRE-ALPHA
 
 Design:
@@ -23,3 +25,5 @@ Write an install script
 Not imporpant:
 Do actual comprehensive benchmarks  
 Add customization features
+
+![Screenshot](https://github.com/jb2727/TTE/blob/main/TTE.png)
