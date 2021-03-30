@@ -1,0 +1,92 @@
+C (/siː/, as in the letter c) is a general-purpose, procedural computer programming language supporting structured programming, lexical variable scope, and recursion, with a static type system. By design, C provides constructs that map efficiently to typical machine instructions. It has found lasting use in applications previously coded in assembly language. Such applications include operating systems and various application software for computer architectures that range from supercomputers to PLCs and embedded systems.
+
+A successor to the programming language B, C was originally developed at Bell Labs by Dennis Ritchie between 1972 and 1973 to construct utilities running on Unix. It was applied to re-implementing the kernel of the Unix operating system.[6] During the 1980s, C gradually gained popularity. It has become one of the most widely used programming languages,[7][8] with C compilers from various vendors available for the majority of existing computer architectures and operating systems. C has been standardized by the ANSI since 1989 (ANSI C) and by the International Organization for Standardization (ISO).
+
+C is an imperative procedural language. It was designed to be compiled to provide low-level access to memory and language constructs that map efficiently to machine instructions, all with minimal runtime support. Despite its low-level capabilities, the language was designed to encourage cross-platform programming. A standards-compliant C program written with portability in mind can be compiled for a wide variety of computer platforms and operating systems with few changes to its source code.[citation needed]
+
+As of January 2021, C was ranked first in the TIOBE index, a measure of the popularity of programming languages, moving up from the no. 2 spot the previous year.[9] 
+
+Like most procedural languages in the ALGOL tradition, C has facilities for structured programming and allows lexical variable scope and recursion. Its static type system prevents unintended operations. In C, all executable code is contained within subroutines (also called "functions", though not strictly in the sense of functional programming). Function parameters are always passed by value (except arrays). Pass-by-reference is simulated in C by explicitly passing pointer values. C program source text is free-format, using the semicolon as a statement terminator and curly braces for grouping blocks of statements.
+
+The C language also exhibits the following characteristics:
+
+    The language has a small, fixed number of keywords, including a full set of control flow primitives: if/else, for, do/while, while, and switch. User-defined names are not distinguished from keywords by any kind of sigil.
+    It has a large number of arithmetic, bitwise, and logic operators: +, +=, ++, &, ||, etc.
+    More than one assignment may be performed in a single statement.
+    Functions:
+        Function return values can be ignored, when not needed.
+        Function and data pointers permit ad hoc run-time polymorphism.
+        Functions may not be defined within the lexical scope of other functions.
+    Data typing is static, but weakly enforced; all data has a type, but implicit conversions are possible.
+    Declaration syntax mimics usage context. C has no "define" keyword; instead, a statement beginning with the name of a type is taken as a declaration. There is no "function" keyword; instead, a function is indicated by the presence of a parenthesized argument list.
+    User-defined (typedef) and compound types are possible.
+        Heterogeneous aggregate data types (struct) allow related data elements to be accessed and assigned as a unit.
+        Union is a structure with overlapping members; only the last member stored is valid.
+        Array indexing is a secondary notation, defined in terms of pointer arithmetic. Unlike structs, arrays are not first-class objects: they cannot be assigned or compared using single built-in operators. There is no "array" keyword in use or definition; instead, square brackets indicate arrays syntactically, for example month[11].
+        Enumerated types are possible with the enum keyword. They are freely interconvertible with integers.
+        Strings are not a distinct data type, but are conventionally implemented as null-terminated character arrays.
+    Low-level access to computer memory is possible by converting machine addresses to typed pointers.
+    Procedures (subroutines not returning values) are a special case of function, with an untyped return type void.
+    A preprocessor performs macro definition, source code file inclusion, and conditional compilation.
+    There is a basic form of modularity: files can be compiled separately and linked together, with control over which functions and data objects are visible to other files via static and extern attributes.
+    Complex functionality such as I/O, string manipulation, and mathematical functions are consistently delegated to library routines.
+
+While C does not include certain features found in other languages (such as object orientation and garbage collection), these can be implemented or emulated, often through the use of external libraries (e.g., the GLib Object System or the Boehm garbage collector).
+Relations to other languages
+Many later languages have borrowed directly or indirectly from C, including C++, C#, Unix's C shell, D, Go, Java, JavaScript (including transpilers), Julia, Limbo, LPC, Objective-C, Perl, PHP, Python, Ruby, Rust, Swift, Verilog and SystemVerilog (hardware description languages).[5] These languages have drawn many of their control structures and other basic features from C. Most of them (Python being a dramatic exception) also express highly similar syntax to C, and they tend to combine the recognizable expression and statement syntax of C with underlying type systems, data models, and semantics that can be radically different. 
+
+The origin of C is closely tied to the development of the Unix operating system, originally implemented in assembly language on a PDP-7 by Dennis Ritchie and Ken Thompson, incorporating several ideas from colleagues. Eventually, they decided to port the operating system to a PDP-11. The original PDP-11 version of Unix was also developed in assembly language.[6]
+
+Thompson desired a programming language to make utilities for the new platform. At first, he tried to make a Fortran compiler, but soon gave up the idea. Instead, he created a cut-down version of the recently developed BCPL systems programming language. The official description of BCPL was not available at the time,[11] and Thompson modified the syntax to be less wordy, producing the similar but somewhat simpler B.[6] However, few utilities were ultimately written in B because it was too slow, and B could not take advantage of PDP-11 features such as byte addressability.
+
+In 1972, Ritchie started to improve B, which resulted in creating a new language C.[12] The C compiler and some utilities made with it were included in Version 2 Unix.[13]
+
+At Version 4 Unix, released in November 1973, the Unix kernel was extensively re-implemented in C.[6] By this time, the C language had acquired some powerful features such as struct types.
+
+Preprocessor was introduced around 1973 at the urging of Alan Snyder and also in recognition of the usefulness of the file-inclusion mechanisms available in BCPL and PL/I. Its original version provided only included files and simple string replacements: #include and #define of parameterless macros. Soon after that, it was extended, mostly by Mike Lesk and then by John Reiser, to incorporate macros with arguments and conditional compilation.[14]
+
+Unix was one of the first operating system kernels implemented in a language other than assembly. Earlier instances include the Multics system (which was written in PL/I) and Master Control Program (MCP) for the Burroughs B5000 (which was written in ALGOL) in 1961. In around 1977, Ritchie and Stephen C. Johnson made further changes to the language to facilitate portability of the Unix operating system. Johnson's Portable C Compiler served as the basis for several implementations of C on new platforms.[12] 
+
+In 1978, Brian Kernighan and Dennis Ritchie published the first edition of The C Programming Language.[1] This book, known to C programmers as K&R, served for many years as an informal specification of the language. The version of C that it describes is commonly referred to as "K&R C". As this was released in 1978, it is also referred to as C78.[15] The second edition of the book[16] covers the later ANSI C standard, described below.
+
+K&R introduced several language features:
+
+    Standard I/O library
+    long int data type
+    unsigned int data type
+    Compound assignment operators of the form =op (such as =-) were changed to the form op= (that is, -=) to remove the semantic ambiguity created by constructs such as i=-10, which had been interpreted as i =- 10 (decrement i by 10) instead of the possibly intended i = -10 (let i be -10).
+
+Even after the publication of the 1989 ANSI standard, for many years K&R C was still considered the "lowest common denominator" to which C programmers restricted themselves when maximum portability was desired, since many older compilers were still in use, and because carefully written K&R C code can be legal Standard C as well.
+
+In early versions of C, only functions that return types other than int must be declared if used before the function definition; functions used without prior declaration were presumed to return type int.
+
+For example: 
+
+long some_function();
+/* int */ other_function();
+
+/* int */ calling_function()
+{
+    long test1;
+    register /* int */ test2;
+
+    test1 = some_function();
+    if (test1 > 0)
+          test2 = 0;
+    else
+          test2 = other_function();
+    return test2;
+}
+
+The int type specifiers which are commented out could be omitted in K&R C, but are required in later standards.
+
+Since K&R function declarations did not include any information about function arguments, function parameter type checks were not performed, although some compilers would issue a warning message if a local function was called with the wrong number of arguments, or if multiple calls to an external function used different numbers or types of arguments. Separate tools such as Unix's lint utility were developed that (among other things) could check for consistency of function use across multiple source files.
+
+In the years following the publication of K&R C, several features were added to the language, supported by compilers from AT&T (in particular PCC[17]) and some other vendors. These included:
+
+    void functions (i.e., functions with no return value)
+    functions returning struct or union types (rather than pointers)
+    assignment for struct data types
+    enumerated types
+
+The large number of extensions and lack of agreement on a standard library, together with the language popularity and the fact that not even the Unix compilers precisely implemented the K&R specification, led to the necessity of standardization. 
