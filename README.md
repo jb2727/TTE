@@ -1,7 +1,7 @@
 # TTE
 A terminal text editor, designed for people who want gedit/notepad from the CLI!!
 
-Very much WIP, hope to fix that
+PRE-ALPHA
 
 Design:
 Uses a 2D linked list as a text buffer to store the data 
@@ -9,13 +9,11 @@ Runs from the CLI
 
 TODO:
 Important:
-Refactor code so it's simpler
 Implement opimization techniques (I.E holding onto addresses that'll likely be used again)
-Implement text insertion
-Implement text deletion 
-Implement saving and deletion prompts 
+Implement saving and create new file
 Implement copy, cut and paste 
-Implement opening via CLI arguments
+Handle cases when users press unimplemented keys
+Fix bug where scrolling below the top part of the screen causes unintended behaviour
 
 Moderate:
 Implement a line numbers
